@@ -19,4 +19,9 @@ class ProductCreateAPIView(generics.CreateAPIView):
         price=serializer.validated_data.get("price")
         serializer.save(name=name,price=price)
 
+class ProductListAPIView(generics.ListAPIView):
+    queryset=Product.objects.all()
+    serializer_class=ProductSerializer
+
+
 
